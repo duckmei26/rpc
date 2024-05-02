@@ -20,13 +20,13 @@ let buyJob;
 let owoJob;
 let prayJob;
 
-client.on('ready', () => {
+client.on('ready', async () => {
   if (!data.disable.hunt || !data.disable.battle)
-    huntJob = scheduleJob(huntBattleRule, async () => {
-      setTimeout(() => {
+    huntJob = scheduleJob(huntBattleRule, () => {
+      setTimeout(async () => {
         if (!data.disable.hunt) await client.channels.cache.get(channel).send("oh");
       }, 1500);
-      setTimeout(() => {
+      setTimeout(async () => {
         if (!data.disable.battle)
           await client.channels.cache.get(channel).send("ob");
       }, 1800);
