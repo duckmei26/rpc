@@ -1,4 +1,4 @@
-const { Client } = require('discord.js-selfbot-v13');
+const { Client, RichPresence } = require('discord.js-selfbot-v13');
 const client = new Client({
   checkUpdate: false,
 });
@@ -41,6 +41,18 @@ client.on('ready', async () => {
   prayJob = scheduleJob(prayRule, () => {
     if (!data.disable.pray) client.channels.cache.get(channel).send("opray");
   });
+  
+  const rpc = new RichPresence()
+      .setType('STREAMING')
+      .setURL('https://www.twitch.tv/lookinsomething')
+      .setState('"Gặp May"')
+      .setName('Kou')
+      .setDetails('𝘿𝙪𝙘𝙠𝙈𝙚𝙞')
+      .setStartTimestamp(Date.now())
+
+      .setAssetsLargeImage('https://media.discordapp.net/attachments/1033356333094809600/1141655360000753784/e01a354a45f835fba2448f65a5c7a7f5.gif?ex=663353e8&is=66320268&hm=4fba974cc0212fd4df1772cab6be272a66a5e4eca42a370e971d79f03182cda5&')
+  client.user.setActivity(rpc)
+   client.user.setPresence({ status: 'online' })
   console.log(`${client.user.username} is ready!`);
 })
 
