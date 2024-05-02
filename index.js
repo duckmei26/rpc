@@ -89,7 +89,7 @@ client.on("messageCreate", async message => {
 
     let randomGem = getRandomInt(data.inv.length);
     setTimeout(() => {
-      await client.channels.cache
+      client.channels.cache
         .get(channel)
         .send(
           "owouse " +
