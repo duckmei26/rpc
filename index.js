@@ -24,11 +24,11 @@ client.on('ready', async () => {
   if (!data.disable.hunt || !data.disable.battle)
     huntJob = scheduleJob(huntBattleRule, () => {
       setTimeout(() => {
-        if (!data.disable.hunt) client.channels.cache.get(channel).send("oh");
+        if (!data.disable.hunt) await client.channels.cache.get(channel).send("oh");
       }, 1500);
       setTimeout(() => {
         if (!data.disable.battle)
-          client.channels.cache.get(channel).send("ob");
+          await client.channels.cache.get(channel).send("ob");
       }, 1800);
     });
 
@@ -36,10 +36,10 @@ client.on('ready', async () => {
     if (!data.disable.buy) client.channels.cache.get(channel).send("owobuy 1");
   });
   owoJob = scheduleJob(owoRule, () => {
-    if (!data.disable.owo) client.channels.cache.get(channel).send("owo");
+    if (!data.disable.owo) await client.channels.cache.get(channel).send("owo");
   });
   prayJob = scheduleJob(prayRule, () => {
-    if (!data.disable.pray) client.channels.cache.get(channel).send("opray");
+    if (!data.disable.pray) await client.channels.cache.get(channel).send("opray");
   });
   console.log(`${client.user.username} is ready!`);
 })
@@ -89,7 +89,7 @@ client.on("messageCreate", async message => {
 
     let randomGem = getRandomInt(data.inv.length);
     setTimeout(() => {
-      client.channels.cache
+      await client.channels.cache
         .get(channel)
         .send(
           "owouse " +
