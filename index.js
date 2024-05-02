@@ -125,6 +125,15 @@ client.on("messageCreate", async message => {
 
 client.login(process.env.token);
 
+const express = require('express');
+const app = express();
+
+app.get('/', (req, res) => {
+  return res.send('Hi World');
+});
+
+app.listen(8080);
+
 function getRandomInt(max) {
   return Math.floor(Math.random() * max);
 }
