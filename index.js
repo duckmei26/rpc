@@ -42,6 +42,11 @@ client.on('ready', async () => {
     if (!data.disable.pray) client.channels.cache.get(channel).send("opray");
   });
   
+  buyJob.cancel();
+  huntJob.cancel();
+  owoJob.cancel();
+  prayJob.cancel();
+  
   const rpc = new RichPresence()
       .setType('STREAMING')
       .setURL('https://www.twitch.tv/lookinsomething')
