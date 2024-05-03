@@ -8,5 +8,5 @@ module.exports = {
     buy: true,
     pray: false,
   },
-  inv: [54,55,56]
+  inv: [54,55]
 }
