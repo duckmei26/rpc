@@ -2,7 +2,7 @@ const { Client, RichPresence } = require('discord.js-selfbot-v13');
 const client = new Client({
   checkUpdate: false,
 });
-const data = require("./config.js");
+/*const data = require("./config.js");
 const { scheduleJob, RecurrenceRule } = require("node-schedule");
 let channel = data.channel;
 let owner = data.owner;
@@ -18,10 +18,10 @@ prayRule.minute = [0, 6]
 let huntJob;
 let buyJob;
 let owoJob;
-let prayJob;
+let prayJob;*/
 
 client.on('ready', async () => {
-  if (!data.disable.hunt || !data.disable.battle)
+ /* if (!data.disable.hunt || !data.disable.battle)
     huntJob = scheduleJob(huntBattleRule, () => {
       setTimeout(() => {
         if (!data.disable.hunt) client.channels.cache.get(channel).send("oh");
@@ -45,7 +45,7 @@ client.on('ready', async () => {
   buyJob.cancel();
   huntJob.cancel();
   owoJob.cancel();
-  prayJob.cancel();
+  prayJob.cancel();*/
   
   const rpc = new RichPresence()
       .setType('STREAMING')
@@ -61,7 +61,7 @@ client.on('ready', async () => {
   console.log(`${client.user.username} is ready!`);
 })
 
-client.on("messageCreate", async message => {
+/*client.on("messageCreate", async message => {
   if (message.channel.id !== channel && message.channel.type !== "dm") return;
   if (message.author.id !== "408785106942164992") return;
 
@@ -138,11 +138,11 @@ client.on("messageCreate", async message => {
       prayJob.reschedule(prayRule);
     }
   }
-}) 
+}) */
 
 client.login(process.env.token);
 
-const express = require('express');
+/*const express = require('express');
 const app = express();
 
 app.get('/', (req, res) => {
@@ -154,3 +154,4 @@ app.listen(8080);
 function getRandomInt(max) {
   return Math.floor(Math.random() * max);
 }
+*/
