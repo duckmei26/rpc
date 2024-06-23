@@ -50,7 +50,7 @@ client.on('ready', async () => {
   const rpc = new RichPresence()
       .setType('STREAMING')
       .setURL('https://www.twitch.tv/lookinsomething')
-      .setState('"Gặp May"')
+      .setState('"Some Kind Of Magic"')
       .setName('Kou')
       .setDetails('𝘿𝙪𝙘𝙠𝙈𝙚𝙞')
       .setStartTimestamp(Date.now())
