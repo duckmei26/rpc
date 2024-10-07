@@ -2,11 +2,11 @@ module.exports = {
   channel: "1235222113301037086",
   owner: "797345693031071774",
   disable: {
-    hunt: false,
-    battle: false,
-    owo: false,
+    hunt: true,
+    battle: true,
+    owo: true,
     buy: true,
-    pray: false,
+    pray: true,
   },
   inv: [54,55]
 }
